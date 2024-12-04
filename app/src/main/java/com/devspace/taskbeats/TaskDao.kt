@@ -30,6 +30,6 @@ interface TaskDao {
     @Delete
     fun deleteAll(taskEntity: List<TaskEntity>)
 
-    //teste githubb
+    //teste githubb2
 
 }
