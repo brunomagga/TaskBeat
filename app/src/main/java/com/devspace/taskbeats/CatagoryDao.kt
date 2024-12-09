@@ -13,10 +13,12 @@ interface CategoryDao {
     fun getAll(): List<CategoryEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insetAll(categoryEntity: List<CategoryEntity>)
+    fun insertAll(categoryEntity: List<CategoryEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun inset(categoryEntity: CategoryEntity)
+    fun insert(categoryEntity: CategoryEntity)
+    @Query("SELECT * FROM categoryentity WHERE `key` = :name LIMIT 1")
+    fun getCategoryByName(name: String): CategoryEntity?
 
     @Delete
     fun delete(categoryEntity: CategoryEntity)

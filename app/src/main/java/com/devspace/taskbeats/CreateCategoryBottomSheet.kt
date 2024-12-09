@@ -32,12 +32,11 @@ class CreateCategoryBottomSheet(
 
         btnCreate.setOnClickListener {
             val name = tieCategoryName.text.toString()
-            if(taskUiData != null){
+            if(taskUiData == null){
                 onCreateClicked.invoke(name)
                 dismiss()
             }
         }
-
         return view
     }
 }
